@@ -8,6 +8,12 @@ from .config import settings
 def envia_multa_handler(multa_mensagem, metadata):
     print("Uma multa chegou no serviço")
 
+    sendgrid_api_key = settings.SENDGRID_API_KEY
+
+    if not sendgrid_api_key:
+        print("Para mandar email configure a api key do sendgrid!")
+        return
+
     response = requests.get(
         f"{settings.VEICULO_API_URL}/v1/carros/{multa_mensagem['placa']}"
     )
