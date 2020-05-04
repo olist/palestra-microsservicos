@@ -38,23 +38,37 @@ Configurando o Projeto
    $ git clone git@github.com:olist/palestra-microservicos.git
    $ cd palestra-microservicos
 
-2. Para instalar as dependências das aplicações você deve ter o `pipenv`_ instalado. Para isso execute a lia abaixo no terminal.
+2. Para instalar tudo que é necessario para rodar as apis e o serviço basta executar o comando abaixo.
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ pip install pipenv
+   ~/palestra-microservicos $ make inicializar_projeto
 
-3. Após ter instalado o pipenv, devemos instalar as dependências das 3 aplicações: multa-api, veiculo-api, envia-multa-servico, executando o comando abaixo.
 
-.. code-block:: console
-
-   ~/palestra-microservicos $ make instalar_dependencias
-
-4. Após ter instalado as dependências devemos rodar as migrações das apis.
+Levantando as aplicações
+-------------------------
+- Para levantar a api de multas abra um terminal e execute o comando abaixo.
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ make migrar_bancos
+   ~/palestra-microservicos $ levantar_multa_api
+
+- Para levantar a api de veiculo abra um terminal e execute o comando abaixo.
+
+.. code-block:: console
+
+   ~/palestra-microservicos $ levantar_veiculo_api
+
+- Para levantar o serviço de envio de multas abra um terminal e execute o comando abaixo.
+
+.. code-block:: console
+
+   ~/palestra-microservicos $ levantar_envia_multa_servico
 
 
-.. _pipenv: https://pipenv.pypa.io/en/latest/
+Observação
+^^^^^^^^^^
+Caso queira que o serviço de envio de multas envie as multas por email, configure a envvar SENDGRID_API_KEY no arquivo .env do **envio-multa-servico**.
+Para isso você deverá ter uma conta no `sendgrid`_ e uma api key para pode usar a api do sendgrid (Sem custo).
+
+.. _sendgrid: https://sendgrid.com/
