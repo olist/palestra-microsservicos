@@ -4,6 +4,11 @@ rm -rf ../envia-multa-servico/.venv
 rm -rf ../multa-api/.venv
 rm -rf ../veiculo-api/.venv
 
+echo "Criando arquivos .env que armazenam as variáveis de ambiente"
+cp ../envia-multa-servico/local.env ../envia-multa-servico/.env
+cp ../multa-api/local.env ../multa-api/.env
+cp ../veiculo-api/local.env ../veiculo-api/.env
+
 # Cria virtualenvs para envia-multa-servico e instala suas as deps
 echo "Criando envia-multa-servico venv"
 python3 -m venv ../envia-multa-servico/.venv
@@ -46,9 +51,3 @@ deactivate
 echo "Baixando imagem do goaws"
 # goaws nos fornece a infraestutura para rodar o SNS e SQS localmente
 docker pull pafortin/goaws
-
-echo "Criando arquivos .env que armazenam as variáveis de ambiente"
-cp ../envia-multa-servico/local.env ../envia-multa-servico/.env
-cp ../multa-api/local.env ../multa-api/.env
-cp ../veiculo-api/local.env ../veiculo-api/.env
-
