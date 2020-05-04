@@ -1,5 +1,5 @@
-instalar_dependencias:
-	cd scripts && bash instalar_dependencias.sh
+inicializar_projeto:
+	cd scripts && bash inicializar_projeto.sh
 
 levantar_veiculo_api:
 	cd scripts && bash levantar_veiculo_api.sh
