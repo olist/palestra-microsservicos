@@ -51,19 +51,19 @@ Levantando as aplicações
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ levantar_multa_api
+   ~/palestra-microservicos $ make levantar_multa_api
 
 - Para levantar a api de veiculo abra um terminal e execute o comando abaixo.
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ levantar_veiculo_api
+   ~/palestra-microservicos $ make levantar_veiculo_api
 
 - Para levantar o serviço de envio de multas abra um terminal e execute o comando abaixo.
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ levantar_envia_multa_servico
+   ~/palestra-microservicos $ make levantar_envia_multa_servico
 
 
 Observação
