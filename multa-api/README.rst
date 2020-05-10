@@ -6,7 +6,6 @@ API de multas que armazena informações sobre multas.
 
 .. image:: ../imagens/multa-api.png
 
-
 Endpoints
 ---------
 
@@ -32,7 +31,6 @@ HTTP status code 200 OK
         {"id":4,"placa":"kkk-4444","tipo":2}
     ]
 
-
 Criação de Multas
 ^^^^^^^^^^^^^^^^^
 
@@ -45,7 +43,6 @@ Requisição
 ##########
 
 **POST** http://localhost:8001/v1/multas/
-
 
 **Payload**
 
@@ -73,7 +70,6 @@ Requisição
 ##########
 
 **POST** http://localhost:8001/v1/multas/
-
 
 **Payload**
 
