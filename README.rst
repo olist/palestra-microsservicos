@@ -68,11 +68,3 @@ Levantando as aplicações
 .. code-block:: console
 
    ~/palestra-microsservicos $ make levantar_envia_multa_servico
-
-
-Observação
-^^^^^^^^^^
-Caso queira que o serviço de envio de multas envie as multas por email, configure a envvar SENDGRID_API_KEY no arquivo .env do **envio-multa-servico**.
-Para isso você deverá ter uma conta no `sendgrid`_ e uma api key para poder usar a api do sendgrid (sem custo).
-
-.. _sendgrid: https://sendgrid.com/
