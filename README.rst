@@ -1,14 +1,14 @@
 ===========================================================================
-Palestra Desvendando uma arquitetura de microsserviços baseada em eventos
+Palestra desvendando uma arquitetura de microsserviços baseada em eventos
 ===========================================================================
 
-O projeto exemplifica uma simples plataforma de um Departamento de Trânsito, onde
-multas são cadastradas e as mesmas são enviadas para os emails dos Proprietários.
+O projeto exemplifica uma simples plataforma de um departamento de trânsito, onde
+multas são criadas e estas são enviadas para os emails dos proprietários do veiculo multado.
 
 Para a construção dessa plataforma de microsserviços, foi utilizada as seguintes tecnologias:
 
 - `Boto3`_: É o SDK da AWS para Python, que permite desenvolvedores Python utilizarem serviços como o Amazon SNS e SQS em suas aplicações;
-- `Django`_: É um framework Web open source que lhe permitirá escrever aplicações web sem precisar reinventar a roda;
+- `Django`_: É um framework web open source que lhe permitirá escrever aplicações web sem precisar reinventar a roda;
 - `Django Rest Framework`_: É um kit de ferramentas que auxilia na criação de APIs REST em cima do framework Django;
 - `Loafer`_: É um biblioteca que auxilia na contrução de aplicações assíncronas que consumem mensagens enviadas para filas SQS;
 - `SQS`_: É um serviço da AWS de filas de mensagens que permite o desacoplamento e a escalabilidade de microsserviços. Nosso microsserviço obterá as mensagens por meio de um fila SQS.
@@ -22,27 +22,31 @@ Para a construção dessa plataforma de microsserviços, foi utilizada as seguin
 .. _SNS: https://aws.amazon.com/pt/sns/
 
 
-Diagrama de Fluxo de Funcionamento da plataforma
+Diagrama de fluxo de envio de multas por email
 -------------------------------------------------
 
 .. image:: imagens/fluxo-multa.png
 
 
-Configurando o Projeto
+Configurando o projeto
 -----------------------
 
-1. Antes de tudo faça o clone do projeto executando o comando abaixo.
+Esse projeto está todo configurado para rodar no Ubuntu e suas variações (Kubuntu, Xubuntu...).
+Também é esperado que você tenha o docker instalado no seu sistema operacional.
+Caso o docker ainda não esteja instalado siga `este tutorial de instalação <https://docs.docker.com/engine/install/ubuntu/>`_.
+
+1. Faça o clone do projeto executando o comando abaixo.
 
 .. code-block:: console
 
-   $ git clone git@github.com:olist/palestra-microservicos.git
-   $ cd palestra-microservicos
+   $ git clone git@github.com:olist/palestra-microsservicos.git
+   $ cd palestra-microsservicos
 
 2. Para instalar tudo que é necessario para rodar as apis e o serviço basta executar o comando abaixo.
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ make inicializar_projeto
+   ~/palestra-microsservicos $ make inicializar_projeto
 
 
 Levantando as aplicações
@@ -51,24 +55,24 @@ Levantando as aplicações
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ make levantar_multa_api
+   ~/palestra-microsservicos $ make levantar_multa_api
 
 - Para levantar a api de veiculo abra um terminal e execute o comando abaixo.
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ make levantar_veiculo_api
+   ~/palestra-microsservicos $ make levantar_veiculo_api
 
 - Para levantar o serviço de envio de multas abra um terminal e execute o comando abaixo.
 
 .. code-block:: console
 
-   ~/palestra-microservicos $ make levantar_envia_multa_servico
+   ~/palestra-microsservicos $ make levantar_envia_multa_servico
 
 
 Observação
 ^^^^^^^^^^
 Caso queira que o serviço de envio de multas envie as multas por email, configure a envvar SENDGRID_API_KEY no arquivo .env do **envio-multa-servico**.
-Para isso você deverá ter uma conta no `sendgrid`_ e uma api key para pode usar a api do sendgrid (Sem custo).
+Para isso você deverá ter uma conta no `sendgrid`_ e uma api key para poder usar a api do sendgrid (sem custo).
 
 .. _sendgrid: https://sendgrid.com/
