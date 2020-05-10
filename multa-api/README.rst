@@ -1,8 +1,8 @@
-===========
+=========
 multa-api
-===========
+=========
 
-API de multas que armazena informações sobre multas
+API de multas que armazena informações sobre multas.
 
 .. image:: ../imagens/multa-api.png
 
@@ -13,17 +13,15 @@ Endpoints
 Listagem de Multas
 ^^^^^^^^^^^^^^^^^^
 
-.. csv-table::
-   :header: "Método", "URI"
-   :widths: 10, 30
+Requisição
+##########
 
-   "GET", "/v1/multas/"
+**GET** http://localhost:8001/v1/multas/
 
+Resposta
+########
 
-Respostas esperadas
-####################
-
-1 - HTTP status code 200 OK
+HTTP status code 200 OK
 
 .. code-block:: json
 
@@ -38,14 +36,18 @@ Respostas esperadas
 Criação de Multas
 ^^^^^^^^^^^^^^^^^
 
-.. csv-table::
-   :header: "Método", "URI"
-   :widths: 10, 30
+Tipos de multas:
+    - 1  ( Sinal Vermelho )
+    - 2  ( Trafegando em contra mão )
+    - 3  ( Estacionado em local proibido )
 
-   "POST", "/v1/multas/"
+Requisição
+##########
 
-Estrutura do payload a ser enviado
-##################################
+**POST** http://localhost:8001/v1/multas/
+
+
+**Payload**
 
 .. code-block:: json
 
@@ -54,19 +56,10 @@ Estrutura do payload a ser enviado
         "placa": "kkk-1111"
     }
 
-Tipos de multas:
-    - 1  ( Sinal Vermelho )
-    - 2  ( Trafegando em contra mão )
-    - 3  ( Estacionado em local proibido )
+Resposta
+########
 
-Campos obrigatórios:
-    - tipo
-    - placa
-
-Respostas esperadas
-###################
-
-1 - HTTP status code 201 Created
+HTTP status code 201 Created
 
 .. code-block:: json
 
@@ -76,7 +69,22 @@ Respostas esperadas
         "placa": "kkk-1111"
     }
 
-2 - HTTP status code 400 Bad Request
+Requisição
+##########
+
+**POST** http://localhost:8001/v1/multas/
+
+
+**Payload**
+
+.. code-block:: json
+
+    {}
+
+Resposta
+########
+
+HTTP status code 400 Bad Request
 
 .. code-block:: json
 
@@ -88,31 +96,36 @@ Respostas esperadas
 Busca de uma multa
 ^^^^^^^^^^^^^^^^^^
 
-.. csv-table::
-   :header: "Método", "URI"
-   :widths: 10, 30
+Requisição
+##########
 
-   "GET", "/v1/multas/<id-multa>/"
+**GET** http://localhost:8001/v1/multas/66/
 
-Respostas esperadas
-###################
+Resposta
+########
 
-1 - HTTP status code 200 OK
+HTTP status code 200 OK
 
 .. code-block:: json
 
     {
-        "id": 1,
+        "id": 66,
         "tipo": 1,
         "placa": "kkk-1111"
     }
 
-2 - HTTP status code 404 Not Found
+Requisição
+##########
+
+**GET** http://localhost:8001/v1/multas/id-multa-inexistente/
+
+Resposta
+########
+
+HTTP status code 404 Not Found
 
 .. code-block:: json
 
     {
         "detail": "Not found."
     }
-
-
