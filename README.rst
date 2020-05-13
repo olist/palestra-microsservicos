@@ -10,7 +10,7 @@ Para a construção dessa plataforma de microsserviços, foi utilizada as seguin
 - `Boto3`_: É o SDK da AWS para Python, que permite desenvolvedores Python utilizarem serviços como o Amazon SNS e SQS em suas aplicações;
 - `Django`_: É um framework web open source que lhe permitirá escrever aplicações web sem precisar reinventar a roda;
 - `Django Rest Framework`_: É um kit de ferramentas que auxilia na criação de APIs REST em cima do framework Django;
-- `Loafer`_: É um biblioteca que auxilia na contrução de aplicações assíncronas que consumem mensagens enviadas para filas SQS;
+- `Loafer`_: É um biblioteca que auxilia na construção de aplicações assíncronas que consumem mensagens enviadas para filas SQS;
 - `SQS`_: É um serviço da AWS de filas de mensagens que permite o desacoplamento e a escalabilidade de microsserviços. Nosso microsserviço obterá as mensagens por meio de um fila SQS.
 - `SNS`_: É um serviço da AWS de publicação de mensagens em tópicos que permite o desacoplamento de microsserviços. Nossa API irá publicar mensagens em um determinado tópico que possui uma fila SQS inscrita.
 
