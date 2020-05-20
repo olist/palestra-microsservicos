@@ -39,7 +39,7 @@ Caso o docker ainda não esteja instalado siga `este tutorial de instalação <h
 
 .. code-block:: console
 
-   $ git clone git@github.com:olist/palestra-microsservicos.git
+   $ git clone https://github.com/olist/palestra-microsservicos.git
    $ cd palestra-microsservicos
 
 2. Para instalar tudo que é necessario para rodar as apis e o serviço basta executar o comando abaixo.
